@@ -101,6 +101,7 @@
 import {
   Grid,
   MenuItem,
+  TextField,
 } from "@mui/material";
 
 import type {
@@ -162,6 +163,11 @@ export default function PayrollForm({
 
   const netSalary =
     basic + bonus - deduction;
+
+  const {
+    ref: monthRef,
+    ...monthRegister
+  } = register("month");
 
   return (
 
