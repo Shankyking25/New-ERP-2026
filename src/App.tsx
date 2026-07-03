@@ -1,122 +1,249 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+// import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+// import { Box } from "@mui/material";
+// import Logins from  "./features/auth/pages/Login";
 
-function App() {
-  const [count, setCount] = useState(0)
+// import Register from "./features/auth/pages/Register";
+// import ForgotPassword from "./features/auth/pages/ForgotPassword";
+
+
+// export default function App() {
+//   const isAuthenticated = false;
+
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/login" element={<Logins />} />
+//         <Route path="/register" element={<Register />} />
+//         <Route path="/forgot-password" element={<ForgotPassword />} />
+
+//         <Route
+//           path="/"
+//           element={
+//             isAuthenticated ? <Home /> : <Navigate to="/login" />
+//           }
+//         />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
+
+
+
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Box } from "@mui/material";
+
+import Login from "./features/auth/pages/Login";
+import Register from "./features/auth/pages/Register";
+import ForgotPassword from "./features/auth/pages/ForgotPassword";
+import VerifyOtp from "./features/auth/pages/VerifyOtp";
+import ResetPassword from "./features/auth/pages/ResetPassword";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import PublicRoute from "./routes/PublicRoute";
+import Home from "./features/dashboard/pages/Home";
+import Employees from "./features/employees/pages/Employees";
+import AppLayout from "./layouts/AppLayout";
+import EmployeeDetails from "./features/employees/pages/EmployeeDetails";
+
+import { useEffect } from "react";
+import { useAppDispatch } from "./store/hooks";
+import { loadUserFromStorage } from "./features/auth/utils/authLoader";
+
+import Departments from "./features/departments/pages/Departments";
+import Attendance from "./features/attendence/pages/Attendance";
+import Leave from "./features/leave/pages/Leave";
+
+import Payroll from "./features/payroll/pages/Payroll";
+
+
+export default function App() {
+  
+  const dispatch = useAppDispatch();
+
+useEffect(() => {
+  loadUserFromStorage(dispatch);
+}, []);
+
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <BrowserRouter>
+      {/* <Routes>
+        <Route path="/login" element={<Login />} />
 
-      <div className="ticks"></div>
+        <Route path="/register" element={<Register />} />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        <Route
+          path="/forgot-password"
+          element={<ForgotPassword />}
+        />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+<Route
+path="/verify-otp"
+element={<VerifyOtp/>}
+/>
+
+
+<Route
+  path="/reset-password"
+  element={<ResetPassword />}
+/>
+
+        <Route
+          path="/"
+          element={
+            isAuthenticated
+              ? <Home />
+              : <Navigate to="/login" replace />
+          }
+        />
+      </Routes>     */}
+
+<Routes>
+
+  <Route
+    path="/login"
+    element={
+      <PublicRoute>
+        <Login />
+      </PublicRoute>
+    }
+  />
+
+  <Route
+    path="/register"
+    element={
+      <PublicRoute>
+        <Register />
+      </PublicRoute>
+    }
+  />
+
+  <Route
+    path="/forgot-password"
+    element={
+      <PublicRoute>
+        <ForgotPassword />
+      </PublicRoute>
+    }
+  />
+
+  <Route
+    path="/verify-otp"
+    element={
+      <PublicRoute>
+        <VerifyOtp />
+      </PublicRoute>
+    }
+  />
+
+  <Route
+    path="/reset-password"
+    element={
+      <PublicRoute>
+        <ResetPassword />
+      </PublicRoute>
+    }
+  />
+
+
+
+
+<Route
+  path="/employees"
+  element={
+    <ProtectedRoute>
+      <AppLayout>
+        <Employees />
+      </AppLayout>
+    </ProtectedRoute>
+  }
+/>
+
+
+
+<Route
+  path="/employees/:id"
+  element={
+    <ProtectedRoute>
+      <AppLayout>
+        <EmployeeDetails />
+      </AppLayout>
+    </ProtectedRoute>
+  }
+/>
+
+
+
+
+
+<Route
+path="/departments"
+element={
+<ProtectedRoute>
+<AppLayout>
+<Departments/>
+</AppLayout>
+</ProtectedRoute>
+}
+/>
+
+
+
+
+<Route
+  path="/attendance"
+  element={
+    <ProtectedRoute>
+      <AppLayout>
+        <Attendance />
+      </AppLayout>
+    </ProtectedRoute>
+  }
+/>
+
+
+
+<Route
+  path="/leave"
+  element={
+    <ProtectedRoute>
+      <AppLayout>
+        <Leave />
+      </AppLayout>
+    </ProtectedRoute>
+  }
+/>
+
+
+
+<Route
+  path="/payroll"
+  element={
+    <ProtectedRoute>
+      <AppLayout>
+        <Payroll />
+      </AppLayout>
+    </ProtectedRoute>
+  }
+/>
+
+
+
+<Route
+  path="/"
+  element={
+    <ProtectedRoute>
+      <AppLayout>
+        <Home />
+      </AppLayout>
+    </ProtectedRoute>
+  }
+/>
+
+</Routes>
+
+    </BrowserRouter> 
+  );
 }
 
-export default App
+
+
