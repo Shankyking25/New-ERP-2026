@@ -184,17 +184,16 @@ export default function VerifyOtp() {
 
         <Typography
           variant="h5"
-          fontWeight={700}
-          textAlign="center"
+         sx={{ textAlign: "center", fontWeight: 700 }}
         >
           Verify OTP
         </Typography>
 
         <Typography
-          textAlign="center"
+          
           sx={{
             mb: 3,
-            opacity: .7,
+            opacity: .7,  textAlign: "center"
           }}
         >
           OTP sent to
@@ -208,7 +207,7 @@ export default function VerifyOtp() {
         <Stack
           direction="row"
           spacing={1}
-          justifyContent="center"
+          sx={{ justifyContent: "center" }}
         >
 
           {otp.map(
@@ -266,7 +265,7 @@ export default function VerifyOtp() {
 
         <Stack
           spacing={2}
-          mt={4}
+          sx={{ mt: 4 }}
         >
 
           <AppButton
@@ -281,7 +280,7 @@ export default function VerifyOtp() {
           {seconds > 0 ? (
 
             <Typography
-              textAlign="center"
+             sx={{ textAlign: "center" }}
             >
               Resend OTP in{" "}
               <b>
@@ -296,7 +295,7 @@ export default function VerifyOtp() {
                 RouterLink
               }
               underline="hover"
-              textAlign="center"
+              sx={{ textAlign: "center" }}
               onClick={
                 resendOtp
               }

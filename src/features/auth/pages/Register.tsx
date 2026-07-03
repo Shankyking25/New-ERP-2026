@@ -149,15 +149,15 @@ const onSubmit = async (data: RegisterSchemaType) => {
         <Typography
           variant="h5"
           fontWeight={700}
-          textAlign="center"
+          sx={{ textAlign: "center" }}
         >
           ERP System Register
         </Typography>
 
         <Typography
           variant="body2"
-          textAlign="center"
-          sx={{ opacity: 0.7, mb: 3 }}
+          
+          sx={{ opacity: 0.7, mb: 3 , textAlign: "center" }}
         >
           Create your account to continue
         </Typography>
@@ -175,7 +175,7 @@ const onSubmit = async (data: RegisterSchemaType) => {
   label="Full Name"
   {...register("name")}
 /> {errors.name && (
-  <Typography color="error" fontSize={12}>
+  <Typography color="error" sx={{ fontSize: 12 }}>
     {errors.name.message}
   </Typography>
 )}
@@ -186,7 +186,7 @@ const onSubmit = async (data: RegisterSchemaType) => {
 />
 
 {errors.email && (
-  <Typography color="error" fontSize={12}>
+  <Typography color="error" sx={{ fontSize: 12 }}>
     {errors.email.message}
   </Typography>
 )}
@@ -197,7 +197,7 @@ const onSubmit = async (data: RegisterSchemaType) => {
 />
 
 {errors.mobile && (
-  <Typography color="error" fontSize={12}>
+  <Typography color="error" sx={{ fontSize: 12 }}>
     {errors.mobile.message}
   </Typography>
 )}
@@ -208,7 +208,7 @@ const onSubmit = async (data: RegisterSchemaType) => {
 />
 
 {errors.password && (
-  <Typography color="error" fontSize={12}>
+  <Typography color="error" sx={{ fontSize: 12 }}>
     {errors.password.message}
   </Typography>
 )}
@@ -218,7 +218,7 @@ const onSubmit = async (data: RegisterSchemaType) => {
 />
 
 {errors.confirmPassword && (
-  <Typography color="error" fontSize={12}>
+  <Typography color="error" sx={{ fontSize: 12 }}>
     {errors.confirmPassword.message}
   </Typography>
 )}
@@ -233,7 +233,7 @@ const onSubmit = async (data: RegisterSchemaType) => {
 </AppButton>
 
 
-          <Typography textAlign="center">
+          <Typography sx={{ textAlign: "center" }}>
             OR
           </Typography>
 

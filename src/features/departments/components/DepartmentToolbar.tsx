@@ -23,16 +23,18 @@ export default function DepartmentToolbar({
 }: Props) {
   return (
     <Box
-      display="flex"
-      justifyContent="space-between"
-      alignItems="center"
-      flexWrap="wrap"
-      gap={2}
-      mb={3}
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: 2,
+          mb: 3,
+        }}
     >
       <Typography
-        variant="h5"
-        fontWeight={700}
+       sx={{ variant:"h5",
+        fontWeight:700 }}
       >
         Departments
       </Typography>

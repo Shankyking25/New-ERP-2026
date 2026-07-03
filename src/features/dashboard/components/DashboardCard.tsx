@@ -24,7 +24,7 @@ export default function DashboardCard({
 
         <Typography
           variant="h4"
-          mt={1}
+          sx={{ mt: 1 }}
         >
           {value}
         </Typography>

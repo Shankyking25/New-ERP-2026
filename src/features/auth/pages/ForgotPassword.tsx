@@ -42,14 +42,14 @@ export default function ForgotPassword() {
   const [forgotPassword, { isLoading }] =
     useForgotPasswordMutation();
 
-  const [snackbar, setSnackbar] = useState({
+  const [snackbar, setSnackbar] = useState<{
+    open: boolean;
+    message: string;
+    severity: "success" | "error";
+  }>({
     open: false,
     message: "",
-    severity: "success" as
-      | "success"
-      | "error"
-      | "warning"
-      | "info",
+    severity: "success",
   });
 
   const {
@@ -105,16 +105,15 @@ export default function ForgotPassword() {
       >
         <Typography
           variant="h5"
-          fontWeight={700}
-          textAlign="center"
+          sx={{ fontWeight: 700, textAlign: "center" }}
         >
           Forgot Password
         </Typography>
 
         <Typography
           variant="body2"
-          textAlign="center"
           sx={{
+            textAlign: "center",
             opacity: .7,
             mb: 3,
           }}
@@ -137,7 +136,7 @@ export default function ForgotPassword() {
             {errors.email && (
               <Typography
                 color="error"
-                fontSize={12}
+                sx={{ fontSize: 12 }}
               >
                 {errors.email.message}
               </Typography>
@@ -156,10 +155,12 @@ export default function ForgotPassword() {
             </AppButton>
 
             <Box
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              gap={1}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 1,
+              }}
             >
               <ArrowBackIcon
                 color="primary"

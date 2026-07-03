@@ -127,11 +127,11 @@ const onSubmit = async (
           borderRadius: 3,
         }}
       >
-        <Typography variant="h5" fontWeight={700} textAlign="center">
+        <Typography variant="h5" align="center" sx={{ fontWeight: 700 }}>
           ERP System Login
         </Typography>
 
-        <Typography variant="body2" textAlign="center" sx={{ opacity: 0.7, mb: 3 }}>
+        <Typography variant="body2" align="center" sx={{ opacity: 0.7, mb: 3 }}>
           Welcome back! Please login to continue
         </Typography>
 
@@ -143,7 +143,7 @@ const onSubmit = async (
               {...register("email")}
             />
             {errors.email && (
-              <Typography color="error" fontSize={12}>
+              <Typography color="error" sx={{ fontSize: 12 }}>
                 {errors.email.message}
               </Typography>
             )}
@@ -153,7 +153,7 @@ const onSubmit = async (
               {...register("password")}
             />
             {errors.password && (
-              <Typography color="error" fontSize={12}>
+              <Typography color="error" sx={{ fontSize: 12 }}>
                 {errors.password.message}
               </Typography>
             )}
@@ -192,12 +192,12 @@ const onSubmit = async (
   </Typography>
 
   <Link
-    component={RouterLink}
-    to="/register"
-    underline="hover"
-  >
-    Register
-  </Link>
+      component={RouterLink as any}
+      to="/register"
+      underline="hover"
+    >
+      Register
+    </Link>
 </Box>
 
 
@@ -217,17 +217,16 @@ const onSubmit = async (
   />
 
   <Link
-    component={RouterLink}
+    component={RouterLink as any}
     to="/forgot-password"
     underline="hover"
     color="primary"
-    fontSize={14}
-    fontWeight={500}
+    sx={{ fontSize: 14, fontWeight: 500 }}
   >
     Forgot Password?
   </Link>
 </Box>
-         <Typography textAlign="center">
+         <Typography sx={{ textAlign: "center" }}>
   OR
 </Typography>
 

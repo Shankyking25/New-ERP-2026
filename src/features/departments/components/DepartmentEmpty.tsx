@@ -8,8 +8,8 @@ export default function DepartmentEmpty(){
 return(
 
 <Box
-py={10}
-textAlign="center"
+
+sx={{ textAlign: "center",py: 10 }}
 >
 
 <Typography

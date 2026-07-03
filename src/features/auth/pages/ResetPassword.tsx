@@ -157,17 +157,17 @@ export default function ResetPassword() {
 
         <Typography
           variant="h5"
-          fontWeight={700}
-          textAlign="center"
+          
+          sx={{ textAlign: "center",fontWeight: 700 }}
         >
           Reset Password
         </Typography>
 
         <Typography
-          textAlign="center"
+          
           sx={{
             opacity: .7,
-            mb: 3,
+            mb: 3, textAlign: "center"
           }}
         >
           Create a new password
@@ -194,7 +194,7 @@ export default function ResetPassword() {
 
               <Typography
                 color="error"
-                fontSize={12}
+                sx={{ fontSize: 12 }}
               >
                 {
                   errors.password
@@ -220,7 +220,7 @@ export default function ResetPassword() {
 
               <Typography
                 color="error"
-                fontSize={12}
+                sx={{ fontSize: 12 }}
               >
                 {
                   errors
@@ -243,7 +243,7 @@ export default function ResetPassword() {
                 RouterLink
               }
               to="/login"
-              textAlign="center"
+              sx={{ textAlign: "center" }}
             >
               Back to Login
             </Link>

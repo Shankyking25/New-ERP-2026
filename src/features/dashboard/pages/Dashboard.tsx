@@ -21,8 +21,8 @@ export default function Dashboard() {
 
       <Typography
         variant="h4"
-        fontWeight="bold"
-        mb={3}
+        component="h1"
+        sx={{ mb: 3, fontWeight: 'bold' }}
       >
         Dashboard
       </Typography>
@@ -65,7 +65,7 @@ export default function Dashboard() {
 
 
 
-<Grid container spacing={3} mt={2}>
+<Grid container spacing={3} sx={{ mt: 2 }}>
 
   <Grid size={{ xs: 12, md: 8 }}>
     <AttendanceChart />
