@@ -216,7 +216,6 @@ import {
   type GridColDef,
 } from "@mui/x-data-grid";
 
-import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
@@ -224,7 +223,7 @@ import AttendanceStatusChip from "./AttendanceStatusChip";
 
 interface Props {
 
-  rows: any[];
+  rows: unknown[];
 
   loading: boolean;
 
@@ -233,11 +232,11 @@ interface Props {
     | "standard"
     | "comfortable";
 
-  onView: (row: any) => void;
+  onView: (row: unknown) => void;
 
-  onEdit: (row: any) => void;
+  onEdit: (row: unknown) => void;
 
-  onDelete: (row: any) => void;
+  onDelete: (row: unknown) => void;
 
 }
 
@@ -249,7 +248,7 @@ export default function AttendanceTable({
 
   density,
 
-  onView,
+  
 
   onEdit,
 

@@ -82,7 +82,7 @@ export default function ForgotPassword() {
           },
         });
       }, 1500);
-    } catch (error: any) {
+    } catch (error: unknown) {
       setSnackbar({
         open: true,
         message:

@@ -7,6 +7,8 @@ import {
   useDeleteAttendanceMutation,
 } from "../api/attendanceApi";
 
+import type { Attendance } from "../types/attendanceTypes";
+
 import AttendanceToolbar from "../components/AttendanceToolbar";
 import AttendanceSearch from "../components/AttendanceSearch";
 import AttendanceFilters from "../components/AttendanceFilters";
@@ -39,7 +41,7 @@ export default function Attendance() {
   const [open, setOpen] = useState(false);
 
   const [selectedAttendance, setSelectedAttendance] =
-    useState<any>(null);
+    useState<unknown>(null);
 
   const [deleteDialog, setDeleteDialog] =
     useState(false);

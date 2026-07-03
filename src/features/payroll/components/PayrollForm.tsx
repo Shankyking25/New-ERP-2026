@@ -101,7 +101,7 @@
 import {
   Grid,
   MenuItem,
-  TextField,
+  
 } from "@mui/material";
 
 import type {
@@ -164,17 +164,12 @@ export default function PayrollForm({
   const netSalary =
     basic + bonus - deduction;
 
-  const {
-    ref: monthRef,
-    ...monthRegister
-  } = register("month");
-
   return (
 
     <Grid
       container
-      spacing={2}
-      mt={1}
+     sx={{ spacing: 2,
+      mt: 1 }}
     >
 
       <Grid size={{ xs: 12, md: 6 }}>
@@ -196,7 +191,7 @@ export default function PayrollForm({
           </MenuItem>
 
           {data?.employees?.map(
-            (emp: any) => (
+            (emp: { _id: string; employeeId: string; name: string }) => (
 
               <MenuItem
                 key={emp._id}
@@ -220,9 +215,9 @@ export default function PayrollForm({
           type="month"
           fullWidth
           label="Payroll Month"
-          InputLabelProps={{
-            shrink: true,
-          }}
+          // InputLabelProps={{
+          //   shrink: true,
+          // }}
           error={!!errors.month}
           helperText={
             errors.month?.message as string
@@ -283,9 +278,9 @@ export default function PayrollForm({
           fullWidth
           label="Net Salary"
           value={netSalary}
-          InputProps={{
-            readOnly: true,
-          }}
+          // InputProps={{
+          //   readOnly: true,
+          // }}
         />
 
       </Grid>
