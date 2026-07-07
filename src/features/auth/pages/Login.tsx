@@ -6,7 +6,7 @@ import {
   Stack,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import GoogleIcon from "@mui/icons-material/Google";
+//import GoogleIcon from "@mui/icons-material/Google";
 import LockResetIcon from "@mui/icons-material/LockReset";
 
 import { useForm } from "react-hook-form";
@@ -226,14 +226,14 @@ const onSubmit = async (
     Forgot Password?
   </Link>
 </Box>
-         <Typography sx={{ textAlign: "center" }}>
+         {/* <Typography sx={{ textAlign: "center" }}>
   OR
 </Typography>
 
 <AppButton fullWidth type="button">
   <GoogleIcon sx={{ mr: 1 }} />
   Continue with Google
-</AppButton>
+</AppButton> */}
 
 <Box
   sx={{
