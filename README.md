@@ -238,12 +238,6 @@ JWT_SECRET=YOUR_SECRET_KEY
 
 ---
 
-## Attendance
-
-![Attendance](./screen_shots/Attendance.png)
-
----
-
 ## Attendance (Edit, Delete)
 
 ![Attendance](./screen_shots/Attendance(Edit,delete).png)
