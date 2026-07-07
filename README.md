@@ -306,3 +306,4 @@ Feedback and contributions are always welcome.
 # 📄 License
 
 This project is licensed under the MIT License.
+---
