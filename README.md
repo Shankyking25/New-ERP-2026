@@ -36,8 +36,6 @@ Designed with a clean Material UI interface, secure REST APIs, and scalable arch
 
 📷 **Screenshot**
 
-![Employee Dashboard](./screenshots/employees.png)
-
 ---
 
 ### 🏢 Department Management
@@ -49,9 +47,6 @@ Designed with a clean Material UI interface, secure REST APIs, and scalable arch
 * Search
 * Pagination
 
-📷 **Screenshot**
-
-![Departments](./screenshots/departments.png)
 
 ---
 
@@ -64,9 +59,7 @@ Designed with a clean Material UI interface, secure REST APIs, and scalable arch
 * Pagination
 * Responsive Table
 
-📷 **Screenshot**
 
-![Attendance](./screenshots/attendance.png)
 
 ---
 
@@ -80,9 +73,7 @@ Designed with a clean Material UI interface, secure REST APIs, and scalable arch
 * Status Filter
 * Pagination
 
-📷 **Screenshot**
 
-![Leave](./screenshots/leave.png)
 
 ---
 
@@ -98,10 +89,6 @@ Designed with a clean Material UI interface, secure REST APIs, and scalable arch
 * Search
 * Pagination
 
-📷 **Screenshot**
-
-![Payroll](./screenshots/payroll.png)
-
 ---
 
 ### 📊 Dashboard
@@ -111,10 +98,6 @@ Designed with a clean Material UI interface, secure REST APIs, and scalable arch
 * Leave Statistics
 * Payroll Summary
 * Department Overview
-
-📷 **Screenshot**
-
-![Dashboard](./screenshots/dashboard.png)
 
 ---
 
@@ -311,16 +294,9 @@ JWT_SECRET=YOUR_SECRET_KEY
 
 # 👨‍💻 Author
 
-**Shanky Singh**
-
 Full Stack MERN Developer
 
-GitHub: https://github.com/YOUR_USERNAME
-
-LinkedIn: https://linkedin.com/in/YOUR_LINKEDIN
-
-Email: [your-email@example.com](mailto:your-email@example.com)
-
+GitHub: https://github.com/Shankyking25
 ---
 
 # ⭐ Support
