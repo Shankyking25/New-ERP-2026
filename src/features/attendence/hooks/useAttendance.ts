@@ -1,6 +1,6 @@
 import {
 
-  useAddAttendanceMutation,
+  useCreateAttendanceMutation,
 
   useDeleteAttendanceMutation,
 
@@ -12,7 +12,7 @@ export default function useAttendance() {
 
   const [
 
-    addAttendance,
+    createAttendance,
 
     {
 
@@ -20,7 +20,7 @@ export default function useAttendance() {
 
     },
 
-  ] = useAddAttendanceMutation();
+  ] = useCreateAttendanceMutation();
 
   const [
 
@@ -48,7 +48,7 @@ export default function useAttendance() {
 
   return {
 
-    addAttendance,
+    createAttendance,
 
     updateAttendance,
 

@@ -4,7 +4,7 @@ import {
 } from "@mui/x-data-grid";
 
 interface Props {
-  rows: any[];
+  rows: Record<string, unknown>[];
   columns: GridColDef[];
   loading?: boolean;
 }

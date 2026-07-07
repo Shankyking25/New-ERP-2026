@@ -163,7 +163,7 @@ import EmployeeStatusChip from "./EmployeeStatusChip";
 import EmployeeAvatar from "./EmployeeAvatar";
 
 interface Props {
-  rows: any[];
+  rows: unknown[];
   loading: boolean;
 
   density:
@@ -171,8 +171,8 @@ interface Props {
     | "standard"
     | "comfortable";
 
-  onEdit: (row: any) => void;
-  onDelete: (row: any) => void;
+  onEdit: (row: unknown) => void;
+  onDelete: (row: unknown) => void;
 }
 
 export default function EmployeeTable({
@@ -368,20 +368,6 @@ console.log("====", rows);
           pageSizeOptions={[10, 20, 50]}
           sx={{
             border: 0,
-
-          //   "& .MuiDataGrid-columnHeaders": {
-          //     position: "sticky",
-          //     top: 0,
-          //     backgroundColor: "#fafafa",
-          //     zIndex: 10,
-          //     fontWeight: "bold",
-          //   },
-
-          //   "& .MuiDataGrid-cell": {
-          //     display: "flex",
-          //     alignItems: "center",
-          //   },
-          // }}
 
    "& .MuiDataGrid-columnHeaders": {
       backgroundColor: "#fafafa",

@@ -1,6 +1,6 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 
-import axiosBaseQuery from "./axiosBaseQuery";
+import { axiosBaseQuery } from "./axiosBaseQuery";
 
 export const baseApi = createApi({
   reducerPath: "baseApi",
@@ -9,8 +9,10 @@ export const baseApi = createApi({
 
   tagTypes: [
     "Employee",
-    "Department", // <-- add this
-    "Attendance", "Leave", "Payroll"
+    "Department", 
+    "Attendance",
+    "Leave", 
+    "Payroll",
   ],
 
   endpoints: () => ({}),

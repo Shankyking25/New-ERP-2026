@@ -86,7 +86,7 @@ export default function ForgotPassword() {
       setSnackbar({
         open: true,
         message:
-          error?.data?.message ||
+          (error as { data?: { message?: string } })?.data?.message ||
           "Unable to send OTP",
         severity: "error",
       });

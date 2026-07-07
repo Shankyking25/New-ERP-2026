@@ -117,8 +117,8 @@ import BusinessIcon from "@mui/icons-material/Business";
 import BadgeIcon from "@mui/icons-material/Badge";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import PaymentsIcon from "@mui/icons-material/Payments";
-import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
-import SettingsIcon from "@mui/icons-material/Settings";
+// import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
+// import SettingsIcon from "@mui/icons-material/Settings";
 
 export interface MenuItemType {
   title: string;
@@ -157,14 +157,14 @@ export const menuItems: MenuItemType[] = [
     path: "/payroll",
     icon: <PaymentsIcon />,
   },
-  {
-    title: "Reports",
- //   path: "/reports",
-    icon: <ReceiptLongIcon />,
-  },
-  {
-    title: "Settings",
-  //  path: "/settings",
-    icon: <SettingsIcon />,
-  },
+//   {
+//     title: "Reports",
+//  //   path: "/reports",
+//     icon: <ReceiptLongIcon />,
+//   },
+//   {
+//     title: "Settings",
+//   //  path: "/settings",
+//     icon: <SettingsIcon />,
+//   },
 ];

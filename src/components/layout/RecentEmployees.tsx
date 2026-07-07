@@ -29,10 +29,7 @@ export default function RecentEmployees() {
 
     <Paper sx={{ p: 2 }}>
 
-      <Typography
-        variant="h6"
-        mb={2}
-      >
+      <Typography variant="h6" sx={{ mb: 2 }}>
         Recent Employees
       </Typography>
 

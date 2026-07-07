@@ -1,34 +1,17 @@
-import {
-  Box,
-  Typography,
-  Paper,
-  Stack,
-  useMediaQuery,
-  Link,
-} from "@mui/material";
+import {  Box,  Typography,Paper,Stack,useMediaQuery, Link,} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import GoogleIcon from "@mui/icons-material/Google";
 import LoginIcon from "@mui/icons-material/Login";
-
 import { Link as RouterLink } from "react-router-dom";
-
 import AppButton from "../../../components/common/AppButton";
 import AppTextField from "../../../components/common/AppTextField";
 import AppPasswordField from "../../../components/common/AppPasswordField";
 import { authPageStyles } from "../../../styles/globalStyles";
-
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
-import {
-  registerSchema,
-  type RegisterSchemaType,
-} from "../schemas/registerSchema";
-
+import {  registerSchema,  type RegisterSchemaType,} from "../schemas/registerSchema";
 import { useRegisterMutation } from "../api/authApi";
-
 import axiosInstance from "../../../services/api/axiosInstance";
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppSnackbar from "../../../components/common/AppSnackbar";
@@ -42,9 +25,7 @@ export default function Register() {
 
   const [registerUser, { isLoading }] = useRegisterMutation();
 
-
-  const navigate = useNavigate();
-
+/*
 const [snackbar, setSnackbar] = useState({
   open: false,
   message: "",
@@ -54,8 +35,26 @@ const [snackbar, setSnackbar] = useState({
     | "warning"
     | "info",
 });
+*/
 
 
+
+const [snackbar, setSnackbar] = useState<{
+ open: boolean;
+ message: string;
+ severity: "success" | "error" ;  
+}>({
+  open: false,
+  message: "",
+  severity: "success",
+});
+
+
+
+  const navigate = useNavigate();
+
+
+  
 
 const {
   register,
@@ -111,7 +110,7 @@ const onSubmit = async (data: RegisterSchemaType) => {
       email: data.email,
       mobile: data.mobile,
       password: data.password,
-      role: "employee",
+      //role: "employee",
     }).unwrap();
 
     setSnackbar({
@@ -123,11 +122,16 @@ const onSubmit = async (data: RegisterSchemaType) => {
     setTimeout(() => {
       navigate("/login");
     }, 2000);
-  } catch (error: any) {
-    setSnackbar({
+  } catch (error: unknown) {
+    //const err = error as ReturnType<typeof registerUser>["error"];
+     const err = error as Record<string, unknown>;
+
+     const errorData = err?.data as { message?: string } | undefined;
+   setSnackbar({
       open: true,
       message:
-        error?.data?.message || "Registration Failed",
+       // error?.data?.message || "Registration Failed",
+       (errorData?.message as string) || "Registration Failed",
       severity: "error",
     });
   }
@@ -148,8 +152,8 @@ const onSubmit = async (data: RegisterSchemaType) => {
       >
         <Typography
           variant="h5"
-          fontWeight={700}
-          sx={{ textAlign: "center" }}
+          
+          sx={{ textAlign: "center",fontWeight: 700 }}
         >
           ERP System Register
         </Typography>

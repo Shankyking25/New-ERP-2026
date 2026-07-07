@@ -91,7 +91,7 @@ const onSubmit = async (
 ) => {
   try {
 
-    const res = await login(data).unwrap();
+    const res = await login({ ...data, rememberMe: false }).unwrap();
 
     dispatch(
       loginSuccess({
@@ -102,10 +102,10 @@ const onSubmit = async (
 
     navigate("/");
 
-  } catch (err: any) {
+  } catch (err: unknown) {
 
     alert(
-      err?.data?.message ||
+      (err as { data?: { message?: string } })?.data?.message ||
       "Login Failed"
     );
 
@@ -192,7 +192,7 @@ const onSubmit = async (
   </Typography>
 
   <Link
-      component={RouterLink as any}
+      component={RouterLink as React.ElementType}
       to="/register"
       underline="hover"
     >
@@ -217,7 +217,7 @@ const onSubmit = async (
   />
 
   <Link
-    component={RouterLink as any}
+    component={RouterLink as React.ElementType}
     to="/forgot-password"
     underline="hover"
     color="primary"
