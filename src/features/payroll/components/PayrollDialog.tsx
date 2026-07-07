@@ -38,6 +38,7 @@ export default function PayrollDialog({
   open,
   payroll,
   onClose,
+  onSuccess,
 }: Props) {
 
   const [addPayroll, { isLoading: adding }] =

@@ -24,8 +24,7 @@ export default function PayrollToolbar({
 
     <Stack
       direction="row"
-      spacing={2}
-      justifyContent="space-between"
+     sx={{ spacing: 2, justifyContent: "space-between" }}
     >
 
       <AppButton
