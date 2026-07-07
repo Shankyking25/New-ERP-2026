@@ -226,39 +226,35 @@ JWT_SECRET=YOUR_SECRET_KEY
 
 ---
 
-## Dashboard
-
-![Dashboard](./screenshots/dashboard.png)
-
----
-
 ## Employee Management
 
-![Employees](./screenshots/employees.png)
+![Employees](./screen_shots/Employees.png)
 
 ---
 
 ## Department Management
 
-![Departments](./screenshots/departments.png)
+![Departments](./screen_shots/Department.png)
 
 ---
 
 ## Attendance
 
-![Attendance](./screenshots/attendance.png)
+![Attendance](./screen_shots/Attendance.png)
 
 ---
 
-## Leave
+## Attendance (Edit, Delete)
 
-![Leave](./screenshots/leave.png)
+![Attendance](./screen_shots/Attendance(Edit,delete).png)
 
 ---
 
 ## Payroll
 
-![Payroll](./screenshots/payroll.png)
+![Payroll](## Attendance
+
+![Attendance](./screen_shots/Payroll.png)
 
 ---
 
