@@ -1,75 +1,336 @@
-# React + TypeScript + Vite
+# 🚀 ERP Management System (MERN Stack)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive **Enterprise Resource Planning (ERP)** application built with the **MERN Stack** to simplify employee management, attendance tracking, leave management, payroll processing, and department administration.
 
-Currently, two official plugins are available:
+Designed with a clean Material UI interface, secure REST APIs, and scalable architecture.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🔐 Authentication
 
-## Expanding the ESLint configuration
+* User Registration
+* Secure Login
+* JWT Authentication
+* Protected Routes
+* Role-Based Access Control
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 👨‍💼 Employee Management
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* Add Employee
+* Update Employee
+* Delete Employee
+* Employee Profile
+* Employee Details Page
+* Search Employees
+* Department Filter
+* Status Filter
+* Sorting
+* Pagination
+* CSV Export
+* PDF Export
+* Responsive Data Grid
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+📷 **Screenshot**
 
+![Employee Dashboard](./screenshots/employees.png)
+
+---
+
+### 🏢 Department Management
+
+* Add Department
+* Edit Department
+* Delete Department
+* Department Status
+* Search
+* Pagination
+
+📷 **Screenshot**
+
+![Departments](./screenshots/departments.png)
+
+---
+
+### 📅 Attendance Management
+
+* Daily Attendance
+* Present / Absent / Leave Status
+* Employee-wise Attendance
+* Search
+* Pagination
+* Responsive Table
+
+📷 **Screenshot**
+
+![Attendance](./screenshots/attendance.png)
+
+---
+
+### 🌴 Leave Management
+
+* Apply Leave
+* Approve / Reject Leave
+* Leave Types
+* Employee Selection
+* Search
+* Status Filter
+* Pagination
+
+📷 **Screenshot**
+
+![Leave](./screenshots/leave.png)
+
+---
+
+### 💰 Payroll Management
+
+* Generate Payroll
+* Employee Dropdown
+* Auto Salary Calculation
+* Bonus
+* Deduction
+* Net Salary Calculation
+* Payroll Status
+* Search
+* Pagination
+
+📷 **Screenshot**
+
+![Payroll](./screenshots/payroll.png)
+
+---
+
+### 📊 Dashboard
+
+* Employee Statistics
+* Attendance Statistics
+* Leave Statistics
+* Payroll Summary
+* Department Overview
+
+📷 **Screenshot**
+
+![Dashboard](./screenshots/dashboard.png)
+
+---
+
+# 🛠 Technology Stack
+
+## Frontend
+
+* React 19
+* TypeScript
+* Vite
+* Material UI (MUI)
+* Redux Toolkit
+* RTK Query
+* React Router
+* React Hook Form
+* Zod
+* Axios
+
+---
+
+## Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* REST API
+
+---
+
+# 📂 Project Structure
+
+```text
+ERP/
+│
+├── erp-frontend/
+│   ├── src/
+│   │   ├── app/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── features/
+│   │   ├── hooks/
+│   │   ├── layouts/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   ├── store/
+│   │   ├── theme/
+│   │   └── utils/
+│
+├── erp-backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   └── server.ts
+│
+└── screenshots/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# ⚙ Installation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Clone Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+```
+
+---
+
+## Frontend
+
+```bash
+cd erp-frontend
+npm install
+npm run dev
+```
+
+Runs on:
 
 ```
+http://localhost:5173
+```
+
+---
+
+## Backend
+
+```bash
+cd erp-backend
+npm install
+npm run dev
+```
+
+Runs on:
+
+```
+http://localhost:5000
+```
+
+---
+
+# 🔑 Environment Variables
+
+Create a `.env` file inside the backend project.
+
+```env
+PORT=5000
+
+MONGO_URI=YOUR_MONGODB_CONNECTION_STRING
+
+JWT_SECRET=YOUR_SECRET_KEY
+```
+
+---
+
+# 📸 Application Screenshots
+
+## Login
+
+![Login](./screenshots/login.png)
+
+---
+
+## Dashboard
+
+![Dashboard](./screenshots/dashboard.png)
+
+---
+
+## Employee Management
+
+![Employees](./screenshots/employees.png)
+
+---
+
+## Department Management
+
+![Departments](./screenshots/departments.png)
+
+---
+
+## Attendance
+
+![Attendance](./screenshots/attendance.png)
+
+---
+
+## Leave
+
+![Leave](./screenshots/leave.png)
+
+---
+
+## Payroll
+
+![Payroll](./screenshots/payroll.png)
+
+---
+
+# 🚀 Future Enhancements
+
+* Role & Permission Management
+* Email Notifications
+* Report Generation
+* Inventory Module
+* Asset Management
+* Project Management
+* Analytics Dashboard
+* Charts & Graphs
+* Dark Mode
+* Multi-language Support
+* Mobile Application
+
+---
+
+# 📈 Highlights
+
+* Clean Architecture
+* Modular Folder Structure
+* RESTful APIs
+* Responsive UI
+* TypeScript Support
+* Secure Authentication
+* Export to CSV & PDF
+* Form Validation with Zod
+* Optimized State Management using Redux Toolkit & RTK Query
+
+---
+
+# 👨‍💻 Author
+
+**Shanky Singh**
+
+Full Stack MERN Developer
+
+GitHub: https://github.com/YOUR_USERNAME
+
+LinkedIn: https://linkedin.com/in/YOUR_LINKEDIN
+
+Email: [your-email@example.com](mailto:your-email@example.com)
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
+Feedback and contributions are always welcome.
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
