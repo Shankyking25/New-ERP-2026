@@ -222,7 +222,7 @@ JWT_SECRET=YOUR_SECRET_KEY
 
 ## Login
 
-![Login](./screenshots/login.png)
+![Login](./screen_shots/Login.png)
 
 ---
 
